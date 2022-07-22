@@ -47,18 +47,21 @@
       </div>
     </section>
     <section class="posts">
-      <div class="post-card">
-        <div>
-          <input type="text" placeholder="Activity" class="searchbar">
+      <form action="submit">
+        <div class="post-card" id="create-new-post-card">
+          <input type="text" placeholder="Activity" class="searchbar" id="post-activity-bar">
+          <input type="text" placeholder="Message" class="searchbar" id="post-message-bar">
+          <div>
+            <input type="datetime-local" name="" class="searchbar" id="post-date-bar">
+            <input type="text" name="date" class="searchbar" id="post-location-bar">
+          </div>
+          <div class="new-post-buttons">
+            <button type="reset" class="buttons" id="new-post-cancel-button">Cancel</button>
+            <button type="submit" class="buttons" id="new-post-publish-button">Post</button>
+          </div>
         </div>
-        <div>
-          <input type="text" placeholder="Message" class="searchbar">
-        </div>
-        <div>
-          <input type="datetime-local" name="" class="searchbar"id="">
-          <input type="text" name="date" id="post-location">
-        </div>
-      </div>
+      </form>
+      
         <div class="post-card">
           <div class="post-card-header">
             <img src="https://icon-library.com/images/my-profile-icon-png/my-profile-icon-png-3.jpg" alt="profile picture" class="profile-picture">

@@ -1,8 +1,9 @@
-const addPost = document.getElementById('new-post-button');
+const createPostEl = document.getElementById('create-new-post-card');
+const addPostButton = document.getElementById('new-post-button');
 
 function addPostHandler(event) {
   event.preventDefault();
-  console.log('bra');
+  createPostEl.style.display = 'flex';
 }
 
-addPost.addEventListener('click', addPostHandler);
+addPostButton.addEventListener('click', addPostHandler);
