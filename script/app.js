@@ -2,6 +2,7 @@ import { Post } from './Post.js';
 
 const createPostEl = document.querySelector('.create-new-post-card');
 const addPostButton = document.getElementById('new-post-button');
+const cancelPostButton = document.getElementById('new-post-cancel-button');
 
 function addPostHandler(event) {
   event.preventDefault();
@@ -17,20 +18,36 @@ const publishPostButton = document.getElementById('new-post-publish-button');
 function publishPostHandler(event) {
   event.preventDefault();
 
-  const activityInput = document.getElementById('post-activity-bar').value;
-  const messageInput = document.getElementById('post-message-bar').value;
-  const dateInput = document.getElementById('post-date-bar').value;
-  const locationInput = document.getElementById('post-location-bar').value;
+  let activityInput = document.getElementById('post-activity-bar').value;
+  let messageInput = document.getElementById('post-message-bar').value;
+  let dateInput = document.getElementById('post-date-bar').value;
+  let locationInput = document.getElementById('post-location-bar').value;
 
-  const newPost = new Post(
-    activityInput,
-    messageInput,
-    dateInput,
-    locationInput
-  );
+  if (
+    activityInput !== '' &&
+    messageInput !== '' &&
+    dateInput !== '' &&
+    locationInput !== ''
+  ) {
+    const newPost = new Post(
+      activityInput,
+      messageInput,
+      dateInput,
+      locationInput
+    );
+    console.log(newPost);
+    createPostEl.classList.toggle('visible');
+    activityInput = '';
+    messageInput = '';
+    dateInput = '';
+    locationInput = '';
+  } else {
+  }
+}
 
+function cancelPostHandler() {
   createPostEl.classList.toggle('visible');
-  console.log(newPost);
 }
 
 publishPostButton.addEventListener('click', publishPostHandler);
+cancelPostButton.addEventListener('click', cancelPostHandler);
