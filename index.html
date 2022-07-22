@@ -7,6 +7,7 @@
     <title>Friendo</title>
     <link rel="stylesheet" href="/assets/style/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Quicksand&display=swap" rel="stylesheet">
+    <script src="app.js" defer></script>
   </head>
   <body>
     <nav>
@@ -23,7 +24,7 @@
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBpT9wvU2vLr8AHsCBGZt3ywekIb1glsn9Jw&usqp=CAU" alt="massage-icon" class="nav-icon">
         </a>
         <a href="">
-          <img src="https://icons-for-free.com/download-icon-create+cross+new+plus+icon-1320168707626274697_512.png" alt="create new post icon" class="nav-icon">
+          <img src="https://icons-for-free.com/download-icon-create+cross+new+plus+icon-1320168707626274697_512.png" alt="create new post icon" class="nav-icon" id="new-post-button">
         </a>
         <a href="">
           <img src="https://icon-library.com/images/my-profile-icon-png/my-profile-icon-png-3.jpg" alt="profile icon" class="nav-icon">
@@ -46,6 +47,18 @@
       </div>
     </section>
     <section class="posts">
+      <div class="post-card">
+        <div>
+          <input type="text" placeholder="Activity" class="searchbar">
+        </div>
+        <div>
+          <input type="text" placeholder="Message" class="searchbar">
+        </div>
+        <div>
+          <input type="datetime-local" name="" class="searchbar"id="">
+          <input type="text" name="date" id="post-location">
+        </div>
+      </div>
         <div class="post-card">
           <div class="post-card-header">
             <img src="https://icon-library.com/images/my-profile-icon-png/my-profile-icon-png-3.jpg" alt="profile picture" class="profile-picture">
