@@ -1,0 +1,22 @@
+{
+  "name": "friendo",
+  "version": "1.0.0",
+  "description": "\"# friendo\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mandusi/friendo.git"
+  },
+  "author": "Osman Ekinci",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mandusi/friendo/issues"
+  },
+  "homepage": "https://github.com/Mandusi/friendo#readme",
+  "dependencies": {
+    "firebase": "^9.9.1"
+  }
+}

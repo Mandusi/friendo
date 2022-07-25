@@ -58,3 +58,5 @@ function cancelPostHandler() {
 
 publishPostButton.addEventListener('click', publishPostHandler);
 cancelPostButton.addEventListener('click', cancelPostHandler);
+
+console.log(firebase);
