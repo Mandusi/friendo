@@ -24,10 +24,10 @@ function publishPostHandler(event) {
   let locationInput = document.getElementById('post-location-bar').value;
 
   if (
-    activityInput !== '' &&
-    messageInput !== '' &&
-    dateInput !== '' &&
-    locationInput !== ''
+    activityInput.trim() !== '' &&
+    messageInput.trim() !== '' &&
+    dateInput.trim() !== '' &&
+    locationInput.trim() !== ''
   ) {
     const newPost = new Post(
       activityInput,
@@ -35,13 +35,20 @@ function publishPostHandler(event) {
       dateInput,
       locationInput
     );
+
     console.log(newPost);
+
     createPostEl.classList.toggle('visible');
+
+    const formEl = document.getElementById('new-post-form');
+    formEl.reset();
+
     activityInput = '';
     messageInput = '';
     dateInput = '';
     locationInput = '';
   } else {
+    console.log('All areas must be filled.');
   }
 }
 
