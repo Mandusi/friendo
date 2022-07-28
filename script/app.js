@@ -1,4 +1,6 @@
 import { Post } from './Post.js';
+import { addDocumentToFb } from './firebase.js';
+import { getPostsFromFb } from './firebase.js';
 
 const createPostEl = document.querySelector('.create-new-post-card');
 const addPostButton = document.getElementById('new-post-button');
@@ -36,7 +38,7 @@ function publishPostHandler(event) {
       locationInput
     );
 
-    console.log(newPost);
+    addDocumentToFb(newPost);
 
     createPostEl.classList.toggle('visible');
 
@@ -58,3 +60,4 @@ function cancelPostHandler() {
 
 publishPostButton.addEventListener('click', publishPostHandler);
 cancelPostButton.addEventListener('click', cancelPostHandler);
+getPostsFromFb();
