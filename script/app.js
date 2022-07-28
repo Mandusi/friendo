@@ -7,10 +7,10 @@ const addPostButton = document.getElementById('new-post-button');
 const cancelPostButton = document.getElementById('new-post-cancel-button');
 
 function addPostHandler(event) {
-  event.preventDefault();
+    event.preventDefault();
 
-  // OPENS CREATE POST CARD
-  createPostEl.classList.toggle('visible');
+    // OPENS CREATE POST CARD
+    createPostEl.classList.toggle('visible');
 }
 
 addPostButton.addEventListener('click', addPostHandler);
@@ -18,46 +18,47 @@ addPostButton.addEventListener('click', addPostHandler);
 const publishPostButton = document.getElementById('new-post-publish-button');
 
 function publishPostHandler(event) {
-  event.preventDefault();
+    event.preventDefault();
 
-  let activityInput = document.getElementById('post-activity-bar').value;
-  let messageInput = document.getElementById('post-message-bar').value;
-  let dateInput = document.getElementById('post-date-bar').value;
-  let locationInput = document.getElementById('post-location-bar').value;
+    let activityInput = document.getElementById('post-activity-bar').value;
+    let messageInput = document.getElementById('post-message-bar').value;
+    let dateInput = document.getElementById('post-date-bar').value;
+    let locationInput = document.getElementById('post-location-bar').value;
 
-  if (
-    activityInput.trim() !== '' &&
-    messageInput.trim() !== '' &&
-    dateInput.trim() !== '' &&
-    locationInput.trim() !== ''
-  ) {
-    const newPost = new Post(
-      activityInput,
-      messageInput,
-      dateInput,
-      locationInput
-    );
+    if (
+        activityInput.trim() !== '' &&
+        messageInput.trim() !== '' &&
+        dateInput.trim() !== '' &&
+        locationInput.trim() !== ''
+    ) {
+        const newPost = new Post(
+            activityInput,
+            messageInput,
+            dateInput,
+            locationInput
+        );
 
-    addDocumentToFb(newPost);
+        addDocumentToFb(newPost);
 
-    createPostEl.classList.toggle('visible');
+        createPostEl.classList.toggle('visible');
 
-    const formEl = document.getElementById('new-post-form');
-    formEl.reset();
+        const formEl = document.getElementById('new-post-form');
+        formEl.reset();
 
-    activityInput = '';
-    messageInput = '';
-    dateInput = '';
-    locationInput = '';
-  } else {
-    console.log('All areas must be filled.');
-  }
+        activityInput = '';
+        messageInput = '';
+        dateInput = '';
+        locationInput = '';
+    } else {
+        console.log('All areas must be filled.');
+    }
 }
 
 function cancelPostHandler() {
-  createPostEl.classList.toggle('visible');
+    createPostEl.classList.toggle('visible');
 }
 
 publishPostButton.addEventListener('click', publishPostHandler);
 cancelPostButton.addEventListener('click', cancelPostHandler);
+
 getPostsFromFb();
