@@ -15,5 +15,3 @@ getPostsFromFb();
 addPostButton.addEventListener('click', addPostHandler);
 publishPostButton.addEventListener('click', publishPostHandler);
 cancelPostButton.addEventListener('click', cancelPostHandler);
-
-conso;
