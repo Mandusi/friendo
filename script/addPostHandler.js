@@ -1,3 +1,5 @@
+import { createPostEl } from './app.js';
+
 export function addPostHandler(event) {
     event.preventDefault();
 

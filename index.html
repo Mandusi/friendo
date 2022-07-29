@@ -1,71 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Friendo</title>
-    <link rel="stylesheet" href="/assets/style/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Quicksand&display=swap" rel="stylesheet">
-    <script type="module" src="script/app.js" defer></script>
-    <script type="module" src="script/firebase.js"></script>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>friendo</title>
+        <link rel="stylesheet" href="/assets/style/style.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cookie&family=Quicksand&display=swap"
+            rel="stylesheet"
+        />
+        <script type="module" src="script/app.js" defer></script>
+        <script type="module" src="script/firebase.js" defer></script>
     </head>
-  <body>
-    <nav>
-        <a href="">
-          <h1 id="logo">friendo</h1>
-        </a>
-      </a>
-      <input type="search" class="searchbar" placeholder="Search" />
-      <span id="nav-tools">
-        <a href="">
-          <img src="https://cdn-icons-png.flaticon.com/512/1946/1946488.png" alt="home-icon" class="nav-icon">
-        </a>
-        <a href="">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBpT9wvU2vLr8AHsCBGZt3ywekIb1glsn9Jw&usqp=CAU" alt="massage-icon" class="nav-icon">
-        </a>
-        <a href="">
-          <img src="https://icons-for-free.com/download-icon-create+cross+new+plus+icon-1320168707626274697_512.png" alt="create new post icon" class="nav-icon" id="new-post-button">
-        </a>
-        <a href="">
-          <img src="https://icon-library.com/images/my-profile-icon-png/my-profile-icon-png-3.jpg" alt="profile icon" class="nav-icon">
-        </a>
-      </span>
-    </nav>
-    <section class="subscribtions">
-      <h2>Subscribtions</h2>
-      <div class="sub-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/523/523686.png" alt="">
-        <p>#tennis</p>
-      </div>
-      <div class="sub-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/523/523686.png" alt="">
-        <p>#billard</p>
-      </div>
-      <div class="sub-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/523/523686.png" alt="">
-        <p>#oil wrestling</p>
-      </div>
-    </section>
+    <body>
+        <nav>
+            <span class="nav-content">
+                <a href="" id="logo">
+                    <h1>friendo</h1>
+                </a>
+                <input type="search" class="searchbar" placeholder="Search" />
+                <ul id="nav-tools">
+                    <li>
+                        <a href="">
+                            <img
+                                src="https://cdn-icons-png.flaticon.com/512/1946/1946488.png"
+                                alt="home-icon"
+                                class="nav-icon"
+                            />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBpT9wvU2vLr8AHsCBGZt3ywekIb1glsn9Jw&usqp=CAU"
+                                alt="massage-icon"
+                                class="nav-icon"
+                            />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img
+                                src="https://icons-for-free.com/download-icon-create+cross+new+plus+icon-1320168707626274697_512.png"
+                                alt="create new post icon"
+                                class="nav-icon"
+                                id="new-post-button"
+                            />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img
+                                src="https://icon-library.com/images/my-profile-icon-png/my-profile-icon-png-3.jpg"
+                                alt="profile icon"
+                                class="nav-icon"
+                            />
+                        </a>
+                    </li>
+                </ul>
+            </span>
+        </nav>
+        <main class="main-content">
+            <section class="subscribtions">
+                <h2>Subscribtions</h2>
+                <div class="sub-card">
+                    <img
+                        src="https://cdn-icons-png.flaticon.com/512/523/523686.png"
+                        alt=""
+                    />
+                    <p>#tennis</p>
+                </div>
+                <div class="sub-card">
+                    <img
+                        src="https://cdn-icons-png.flaticon.com/512/523/523686.png"
+                        alt=""
+                    />
+                    <p>#billard</p>
+                </div>
+                <div class="sub-card">
+                    <img
+                        src="https://cdn-icons-png.flaticon.com/512/523/523686.png"
+                        alt=""
+                    />
+                    <p>#oil wrestling</p>
+                </div>
+            </section>
 
-    <section class="posts">
-      <form action="submit" id="new-post-form">
-        <div class="create-new-post-card" >
-          <input type="text" placeholder="Activity" class="searchbar" id="post-activity-bar">
-          <input type="text" placeholder="Message" class="searchbar" id="post-message-bar">
-          <div>
-            <input type="datetime-local" name="" class="searchbar" id="post-date-bar">
-            <input type="text" name="date" class="searchbar" id="post-location-bar">
-          </div>
-          <div class="new-post-buttons">
-            <button type="reset" class="buttons" id="new-post-cancel-button">Cancel</button>
-            <button type="submit" class="buttons" id="new-post-publish-button">Post</button>
-          </div>
-        </div>
-      </form>
-    </section>
-    <footer>
-      <a href="<a href="https://www.freepik.com/vectors/social-media">Social media vector created by myriammira - www.freepik.com</a>
-    </footer>
-  </body>
+            <section class="posts">
+                <form action="submit" id="new-post-form">
+                    <div class="create-new-post-card">
+                        <input
+                            type="text"
+                            placeholder="Activity"
+                            class="searchbar"
+                            id="post-activity-bar"
+                        />
+                        <input
+                            type="text"
+                            placeholder="Message"
+                            class="searchbar"
+                            id="post-message-bar"
+                        />
+                        <div>
+                            <input
+                                type="datetime-local"
+                                name=""
+                                class="searchbar"
+                                id="post-date-bar"
+                            />
+                            <input
+                                type="text"
+                                name="date"
+                                class="searchbar"
+                                id="post-location-bar"
+                            />
+                        </div>
+                        <div class="new-post-buttons">
+                            <button
+                                type="reset"
+                                class="buttons"
+                                id="new-post-cancel-button"
+                            >
+                                Cancel
+                            </button>
+                            <button
+                                type="submit"
+                                class="buttons"
+                                id="new-post-publish-button"
+                            >
+                                Post
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </main>
+
+        <footer>
+            <a href="<a href="https://www.freepik.com/vectors/social-media"
+                >Social media vector created by myriammira - www.freepik.com</a
+            >
+        </footer>
+    </body>
 </html>

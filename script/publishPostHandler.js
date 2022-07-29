@@ -1,3 +1,6 @@
+import { Post } from './Post.js';
+import { createPostEl } from './app.js';
+import { addDocumentToFb } from './firebase.js';
 export function publishPostHandler(event) {
     event.preventDefault();
 
@@ -25,11 +28,6 @@ export function publishPostHandler(event) {
 
         const formEl = document.getElementById('new-post-form');
         formEl.reset();
-
-        activityInput = '';
-        messageInput = '';
-        dateInput = '';
-        locationInput = '';
     } else {
         console.log('All areas must be filled.');
     }

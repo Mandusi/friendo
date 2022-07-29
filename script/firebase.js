@@ -24,19 +24,19 @@ initializeApp(firebaseConfig);
 
 const db = getFirestore();
 
-const colRef = collection(db, 'Posts');
+const postsCollection = collection(db, 'Posts');
 
 export function getPostsFromFb() {
     let posts = [];
 
-    getDocs(colRef)
+    getDocs(postsCollection)
         .then((snapshot) => {
             snapshot.docs.forEach((doc) => {
                 posts.push({ ...doc.data(), id: doc.id });
             });
 
             const postsSectionEl = document.querySelector('.posts');
-            console.log(posts);
+
             posts.forEach((post) => {
                 const postCardEl = document.createElement('div');
                 postCardEl.classList = 'post-card';
@@ -44,7 +44,7 @@ export function getPostsFromFb() {
                 const postCardValue = `        
                           <div class="post-card-header">
                             <img src="https://icon-library.com/images/my-profile-icon-png/my-profile-icon-png-3.jpg" alt="profile picture" class="profile-picture">
-                            <p class="nickname">@${post.uid}</p>
+                            <p class="nickname">@${post.userId}</p>
                             <p>&nbsp to &nbsp</p>
                             <p class="activity-name">#${post.activity}</p>
                           </div>
@@ -64,5 +64,5 @@ export function getPostsFromFb() {
 }
 
 export function addDocumentToFb(document) {
-    addDoc(colRef, { ...document });
+    addDoc(postsCollection, { ...document });
 }
